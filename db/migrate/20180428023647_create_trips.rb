@@ -6,8 +6,8 @@ class CreateTrips < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_reference :trips, :users, foreign_key: true, index: true
-    add_reference :trips, :source, foreign_key: true, index: true
-    add_reference :trips, :destination, foreign_key: true, index: true
+    add_reference :trips, :users, index: true
+    add_reference :trips, :source, index: true
+    add_reference :trips, :destination, index: true
   end
 end
