@@ -22,25 +22,8 @@ FactoryBot.define do
       end
 
       after(:create) do |passenger, evaluator|
-        create_list(:pickup, evaluator.pickups_count, passenger: passenger )
+        create_list(:pickup, evaluator.pickups_count, passenger: passenger)
       end
     end
   end
-
-  # factory :passenger do
-  #   name { Faker::Lorem.characters(10) }
-  #   email { Faker::Internet.email }
-  #   password { "password123" }
-  #   role { 'passenger' }
-
-  #   factory :passenger_with_pickups do
-  #     transient do
-  #       pickups_count 2
-  #     end
-
-  #     after(:create) do |passenger, evaluator|
-  #       create_list(:trip, evaluator.pickups_count, passenger: passenger )
-  #     end
-  #   end
-  # end
 end

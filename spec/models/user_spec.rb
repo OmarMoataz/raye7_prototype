@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   it { should validate_length_of(:name).is_at_least(6) }
+  it { should validate_presence_of(:phone_number)}
   it { should validate_uniqueness_of(:phone_number)}
+  it { should validate_presence_of(:role) }
   it { should define_enum_for(:role).with([:driver, :passenger]) }
   it { should have_many :trips }
   it { should have_many :pickups }
