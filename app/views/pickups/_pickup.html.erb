@@ -1,0 +1,2 @@
+<%= pickup.source.name %> -> <%= pickup.destination.name %> at <%= pickup.departure_time %>
+| <%= link_to "delete", pickup_path(pickup.id) , method: :delete, data: { confirm: "You sure?" } %><br>

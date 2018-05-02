@@ -72,6 +72,15 @@ RSpec.configure do |config|
       example.run
     end
   end
+
+  #reduce rspec backtrace size
+  config.backtrace_exclusion_patterns = [
+    /\/lib\d*\/ruby\//,
+    /bin\//,
+    /gems/,
+    /spec\/spec_helper\.rb/,
+    /lib\/rspec\/(core|expectations|matchers|mocks)/
+  ]
 end
 
 Shoulda::Matchers.configure do |config|

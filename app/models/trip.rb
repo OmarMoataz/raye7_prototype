@@ -5,14 +5,14 @@ class Trip < ApplicationRecord
   belongs_to :destination, class_name: "Place"
   belongs_to :driver, class_name: "User"
 
-  validates_associated :driver
-  # validates :driver, presence: true
-  validates_presence_of :departure_time
-  validate :user_role?, :departure_time_cannot_be_in_the_past
+  validates :driver, presence: true
+  validates :departure_time, presence: true
+  validate :departure_time_cannot_be_in_the_past, if: :departure_time
+  validate :user_is_a_driver, if: :driver
 
   private
 
-  def user_role?
+  def user_is_a_driver
     unless driver.role == "driver"
       errors[:driver_id] << "User is not a driver"
       return false

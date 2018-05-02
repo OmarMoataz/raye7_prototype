@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+
+@import "bootstrap";
+
+
+/*
+  ===============
+  Header
+  ===============
+*/
+
+.header {
+  width: 100%;
+  background: black;
+  color: white;
+}
+
+.header ul li {
+  display: inline;
+}

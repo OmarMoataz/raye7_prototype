@@ -1,0 +1,2 @@
+<%= trip.source.name %> -> <%= trip.destination.name %> at <%= trip.departure_time %>
+| <%= link_to "delete", trip_path(trip.id) , method: :delete, data: { confirm: "You sure?" } %><br>

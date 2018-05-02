@@ -1,7 +1,9 @@
-<%= current_user.name %>
-
 <% if current_user.role == "driver" %>
-  <%= render "driver" %>
-<% else %> 
-  <%= render "shared/passenger" %>
-<% end %> 
+  <%= render 'shared/ride', object: @trip, url: trips_path %>  
+  <%= render current_user.trips %>
+<% else %>
+  <%= render 'shared/ride', object: @pickup, url: pickups_path %>
+  <%= render current_user.pickups %>
+<% end %>
+
+

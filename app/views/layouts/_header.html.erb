@@ -1,0 +1,20 @@
+<header class="navbar navbar-fixed-top navbar-inverse header">
+  <div class="container">
+    <%= link_to "Raye7", root_path, class: "btn" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <ul>
+            <li> <%= current_user.name %>
+            <li> <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn' %> </li>
+          </ul>
+        <% else %>
+          <ul>
+            <li><%= link_to "Log in", new_user_session_path, class: "btn" %></li>
+            <li><%= link_to "Sign up", new_user_registration_path, class: "btn" %> </li>
+          </ul>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
