@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe TripsController, type: :controller do
+RSpec.describe V1::TripsController, type: :controller do
 
 end

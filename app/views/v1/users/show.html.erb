@@ -1,9 +1,9 @@
 <% if current_user.role == "driver" %>
   <%= render 'shared/ride', object: @trip, url: trips_path %>  
-  <%= render current_user.trips %>
+  <%= render current_user.trips.includes(:source, :destination) %>
 <% else %>
   <%= render 'shared/ride', object: @pickup, url: pickups_path %>
-  <%= render current_user.pickups %>
+  <%= render current_user.pickups.includes(:source, :destination) %>
 <% end %>
 
 

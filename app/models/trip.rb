@@ -7,6 +7,7 @@ class Trip < ApplicationRecord
 
   validates :driver, presence: true
   validates :departure_time, presence: true
+  validates :number_seats, presence: true
   validate :departure_time_cannot_be_in_the_past, if: :departure_time
   validate :user_is_a_driver, if: :driver
 

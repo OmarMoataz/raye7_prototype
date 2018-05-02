@@ -1,6 +1,6 @@
 <%= form_for object, url: url do |f| %>
 
-  <%= f.label "departure time" %><br>
+  <%= f.label(:departure_time) %><br>
   <%= f.datetime_select(:departure_time) %><br>
 
   <%= f.label(:source_id) %><br>
@@ -16,5 +16,3 @@
 
   <%= f.submit "Create" %>
 <% end %>
-
-
